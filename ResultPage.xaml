@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="grebeniuklab2.ResultPage"
+             Title="Список студентів"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Grid.ColumnDefinitions="*,*,*,*">
+                <!-- Список студентів -->
+                <CollectionView Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Students}" Margin="0,10,0,0">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout>
+                                <Frame BackgroundColor="#DFB0E6" CornerRadius="10" Padding="10" Margin="0,10,0,0" >
+                                    <VerticalStackLayout Spacing="10">
+                                        <!-- Загальна інформація -->
+                                        <Frame>
+                                            <Label Text="{Binding FullName}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="#DFB0E6" />
+                                        </Frame>
+
+                                        <Frame>
+                                            <VerticalStackLayout>
+                                                <HorizontalStackLayout Spacing="10">
+                                                    <Label Text="Дисципліна:" FontSize="16" FontAttributes="Bold" TextColor="#A05FAA" />
+                                                    <Label Text="{Binding Discipline}" FontSize="16" TextColor="#DFB0E6" />
+                                                </HorizontalStackLayout>
+
+                                                <HorizontalStackLayout Spacing="10">
+                                                    <Label Text="Викладач:" FontSize="16" FontAttributes="Bold" TextColor="#A05FAA" />
+                                                    <Label Text="{Binding Teacher}" FontSize="16" TextColor="#DFB0E6" />
+                                                </HorizontalStackLayout>
+
+                                                <HorizontalStackLayout Spacing="10">
+                                                    <Label Text="Спеціалізація:" FontSize="16" FontAttributes="Bold" TextColor="#A05FAA" />
+                                                    <Label Text="{Binding Specialization}" FontSize="16" TextColor="#DFB0E6" />
+                                                </HorizontalStackLayout>
+
+                                                <HorizontalStackLayout Spacing="10">
+                                                    <Label Text="Група:" FontSize="16" FontAttributes="Bold" TextColor="#A05FAA" />
+                                                    <Label Text="{Binding Group}" FontSize="16" TextColor="#DFB0E6" />
+                                                </HorizontalStackLayout>
+                                            </VerticalStackLayout>
+                                        </Frame>
+                                    </VerticalStackLayout>
+                                </Frame>
+                                <BoxView HeightRequest="20" BackgroundColor="Transparent"></BoxView>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

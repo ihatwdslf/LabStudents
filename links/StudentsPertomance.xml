@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="StudentsPertomanceToHTML.xsl"?>
+<Students>
+	<Student FullName="Гребенюк Марія Русланівна" Discipline="ООП" Teacher="Омельчук Людмила Леонідівна" Specialization="Інформатика" Group="К-26">
+		<Discipline Name="ООП" Grade="85" />
+	</Student>
+	<Student FullName="Лисенко Яна Геннадіївна" Discipline="Англійська мова" Teacher="Паламарчук Катерина Миколаївна" Specialization="Інформатика" Group="К-25">
+		<Discipline Name="Англійська мова" Grade="99" />
+	</Student>
+	<Student FullName="Сульженко Вікторія Геннадіївна" Discipline="Сучасна Українська літературна мова" Teacher="Висоцька Тетяна Ігорівна" Specialization="Філологія" Group="ФЛФ-11">
+		<Discipline Name="Сучасна Українська літературна мова" Grade="90" />
+	</Student>
+	<Student FullName="Цибенко Анастасія Олександрівна" Discipline="Фізика грунта" Teacher="Підкова Оксана Миколаївна" Specialization="Геодезія" Group="Грунтознавство">
+		<Discipline Name="Фізика грунта" Grade="89" />
+	</Student>
+	<Student FullName="Сульженко Юлія Геннадіївна" Discipline="Етнологія" Teacher="Гунчик Ігор Валерійович" Specialization="Філологія" Group="ФЛФ-12">
+		<Discipline Name="Етнологія" Grade="89" />
+	</Student>
+	<Student FullName="Мельник Денис Євгенійович" Discipline="Охорона навколишнього середовища" Teacher="Хохотва Олександр Юрійович" Specialization="Комп'ютерна інженерія" Group="КІ-205">
+		<Discipline Name="Охорона навколишнього середовища" Grade="93" />
+	</Student>
+	<Student FullName="Попов Нікіта Богданович" Discipline="Географія" Teacher="Сальваровський Ярослав Романович" Specialization="Географія" Group="Г-21">
+		<Discipline Name="Географія" Grade="91" />
+	</Student>
+	<Student FullName="Завальська Анастасія Миколаївна" Discipline="Лінійна алгебра" Teacher="Бабенко Оксана Анатоліївна" Specialization="Системний аналіз" Group="СА-23">
+		<Discipline Name="Лінійна алгебра" Grade="89" />
+	</Student>
+	<Student FullName="Гребенюк Богдан Русланович" Discipline="Математичний аналіз" Teacher="Молодцов Олександр Ілліч" Specialization="Інформатика" Group="К-26">
+		<Discipline Name="Математичний аналіз" Grade="92" />
+	</Student>
+	<Student FullName="Новаківська Юлія Володимирівна" Discipline="Гістологія" Teacher="Гончаренко Ольга Миколаївна" Specialization="Медицина" Group="М-13">
+		<Discipline Name="Гістологія" Grade="88" />
+	</Student>
+	<Student FullName="Івлев Амір Карімович" Discipline="Архітектура" Teacher="Містобудування" Specialization="Урбаністика" Group="АР-304">
+		<Discipline Name="Основи урбаністики" Grade="70" />
+	</Student>
+	<Student FullName="Ричка Леонід Юрійович" Discipline="Вища математика" Teacher="Маловічко Олег Дмитрович" Specialization="Комп'ютерна інженерія" Group="КІ-304">
+		<Discipline Name="Вища математика" Grade="69" />
+	</Student>
+	<Student FullName="Шліханов Дмитро Олександрович" Discipline="ООП" Teacher="Проскура Світлана Леонідівна" Specialization="Інформаційні системи та технології" Group="ІС-32">
+		<Discipline Name="ООП" Grade="100" />
+	</Student>
+	<Student FullName="Недоступ Даря Віталіївна" Discipline="Основи відеозйомки" Teacher="Тед Емброуз" Specialization="Кінозйомка" Group="КВ-34">
+		<Discipline Name="Основи відеозйомки" Grade="97" />
+	</Student>
+</Students>

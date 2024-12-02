@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="grebeniuklab2.MainPage"
+             BackgroundColor="#FFFFFF"
+             NavigationPage.HasNavigationBar="False">
+
+    <VerticalStackLayout >
+        <Grid RowDefinitions="*,Auto" ColumnDefinitions="*,*" Margin="10,0,10,10" RowSpacing="10" ColumnSpacing="10" >
+            <Frame x:Name="FilePickerFrame" BackgroundColor="#E98EEA"
+            Padding="15"
+            Margin="0,10,0,0"
+            Grid.RowSpan="{Binding RowSpan}" Grid.ColumnSpan="{Binding ColumnSpan}">
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+
+                    <!-- Заголовок -->
+                    <Label Text="Виберіть бажаний XML файл"
+                    FontAttributes="Bold"
+                    FontSize="28"
+                    TextColor="#733087"
+                    HorizontalOptions="Center"
+                    Margin="0,10,0,0" AutomationProperties.IsInAccessibleTree="False" />
+
+                    <!-- Кнопка інформації -->
+                    <Button Text="Про програму" VerticalOptions="Start" HorizontalOptions="Center" 
+                            Clicked="InfoButtonHandler"
+                            FontSize="15" 
+                            BackgroundColor="#5A3B94" 
+                            TextColor="#E7E0F6"/>
+
+                    <!-- Кнопка вибору файлу -->
+                    <Button Text="Обрати файл"
+                            Clicked="OpenFileButtonHandler"
+                             BackgroundColor="#5A3B94" 
+                            TextColor="#E7E0F6"
+                            FontSize="18"
+                            WidthRequest="200"
+                            HorizontalOptions="Center" />
+
+                    <!-- Шлях до файлу -->
+                    <Label x:Name="FilePathLabel"
+                    Text="Немає обраного файлу"
+                    TextColor="#B82B2B"
+                    FontSize="16"
+                    Margin="0,5,0,0"
+                    HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame x:Name="TechnologiesFrame" IsVisible="False" Grid.Row="1" Grid.Column="0">
+                <VerticalStackLayout x:Name="ParsingOptions" Spacing="10">
+                    <!-- Вибір технології -->
+                    <Label x:Name="ParsingTecnology"
+                            Text="Виберіть технологію для парсингу:"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            IsVisible="True"/>
+                    <Picker x:Name ="TechnologyPicker" SelectedItem="LINQ" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Меню фільтрів -->
+            <Frame x:Name="FiltersFrame" IsVisible="False" BackgroundColor="#E98EEA" CornerRadius="10" Padding="15" Margin="0,10,0,0"
+            Grid.Row="0" Grid.Column="1">
+                <Grid RowSpacing="10"
+                ColumnSpacing="10"
+                RowDefinitions="Auto,*,*,Auto"
+                ColumnDefinitions="*,*,*">
+
+                    <Label Text="Фільтри пошуку"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" 
+                   Grid.Row="0" Grid.ColumnSpan="3"/>
+
+                    <!-- Фільтр 1 -->
+                    <StackLayout Grid.Row="1" Grid.Column="0">
+                        <Label Text="ПІБ Студента" FontSize="14" TextColor="#3C2A4F" />
+                        <Entry x:Name="FullNameFilter" Placeholder="Пошук за ПІБ" BackgroundColor="#DBA6DF" FontSize="14" />
+                    </StackLayout>
+
+                    <!-- Фільтр 2 -->
+                    <StackLayout Grid.Row="1" Grid.Column="1">
+                        <Label Text="Група" FontSize="14" TextColor="#3C2A4F" />
+                        <Entry x:Name="GroupFilter" Placeholder="Пошук за групою" BackgroundColor="#DBA6DF" FontSize="14" />
+                    </StackLayout>
+
+                    <!-- Фільтр 3 -->
+                    <StackLayout Grid.Row="1" Grid.Column="2">
+                        <Label Text="Бал" FontSize="14" TextColor="#3C2A4F" />
+                        <Entry x:Name="GradeFilter"  Placeholder="Пошук за балом" BackgroundColor="#DBA6DF" FontSize="14" />
+                    </StackLayout>
+
+                    <!-- Фільтр 4 -->
+                    <StackLayout Grid.Row="2" Grid.Column="2">
+                        <Label Text="Спеціальність" FontSize="14" TextColor="#3C2A4F" />
+                        <Picker x:Name="SpecializationFilter" BackgroundColor="#DBA6DF" />
+                    </StackLayout>
+
+                    <!-- Фільтр 5 -->
+                    <StackLayout Grid.Row="2" Grid.Column="0">
+                        <Label Text="Дисципліна" FontSize="14" TextColor="#3C2A4F" />
+                        <Picker x:Name="DisciplineFilter" BackgroundColor="#DBA6DF" />
+                    </StackLayout>
+
+                    <!-- Фільтр 6 -->
+                    <StackLayout Grid.Row="2" Grid.Column="1">
+                        <Label Text="Викладач" FontSize="14" TextColor="#3C2A4F" />
+                        <Picker x:Name="TeacherFilter" BackgroundColor="#DBA6DF" />
+                    </StackLayout>
+
+                    <!-- Очистити фільтри -->
+                    <StackLayout Grid.Row="3" Grid.ColumnSpan="3">
+                        <Button x:Name="ClearFilters" Clicked="ClearFiltersHandler"
+                        Text="Очистити фільтри"
+                        BackgroundColor="#260548"
+                        TextColor="#DAD1EC"
+                        FontSize="14"
+                        VerticalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="ButtonsFrame" IsVisible="False" Grid.Row="1" Grid.Column="1">
+                <!-- Кнопки дій -->
+                <Grid ColumnDefinitions="auto, *" ColumnSpacing="10">
+                    <Button Clicked="ResultButtonHandler"
+                        Text="Відкрити результат"
+                        BackgroundColor="#107C10"
+                        TextColor="#BAE7BA"
+                        FontSize="16"
+                        CornerRadius="10"
+                        IsVisible="True"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Column="0"/>
+
+                    <Button x:Name="HTMLTransorm"
+                        Text="Трансформувати у HTML"
+                        Clicked="TransformXMLToHTML"
+                        BackgroundColor="#164EB4"
+                        TextColor="#C0D6FB"
+                        FontSize="16"
+                        CornerRadius="10"
+                        IsVisible="True"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Column="1"/>
+                </Grid>
+            </Frame>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
